@@ -1,8 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from time import sleep
 
@@ -17,10 +15,11 @@ try:
     driver.get('https://mercadolivre.com.br')
     sleep(5)
 
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="cb1-edit"]'))).send_keys('televisão')
-    WebDriverWait(driver, 0).until(EC.presence_of_element_located((By.XPATH, '//*[@id="cb1-edit"]'))).send_keys(Keys.ENTER)
+
+    driver.find_element(By.XPATH, '//*[@id="cb1-edit"]').send_keys('televisão')
+    driver.find_element(By.XPATH, '//*[@id="cb1-edit"]').send_keys(Keys.ENTER)
     
-    resultado = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id=":R26l5e6:"]/div[2]'))).text
+    resultado = driver.find_element(By.XPATH, '//*[@id=":R26l5e6:"]/div[2]').text
     
     if 'TV' or 'Televisão' or 'televisão' in resultado:
         status = "OK"
