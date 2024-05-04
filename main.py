@@ -6,7 +6,7 @@ from time import sleep
 
 driver = webdriver.Chrome()
 
-# Cenário: Pesquisar na barra de tarefas
+# Cenário: Pesquisar um produto
 # Dado que o usuario deseja pesquisar um produto na barra de pesquisa
 # Quando ele digita a palavra-chave na mesma
 # Então será retornado todos os produtos que contenham "TV" ou "Televisão no nome"
