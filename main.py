@@ -11,9 +11,10 @@ driver = webdriver.Chrome()
 
 
 # Cenário: Pesquisar na barra de pesquisa
+
 # Dado que o usuario deseja pesquisar um produto na barra de pesquisa
 # Quando ele digita a palavra-chave na mesma
-# Então será retornado todos os produtos que contenham "TV" ou "Televisão no nome"
+# Então será retornado todos os produtos que contenham "TV" ou "Televisão" no nome.
 
 def teste_barra_de_busca():
 
@@ -48,10 +49,11 @@ def teste_barra_de_busca():
 
 
 
-# Cenário: Clicar no botão comprar
+# Cenário: Comprar um produto utilizando o botão comprar
+        
 # Dado que o usuario deseja comprar um produto no site
 # Quando ele clica no botão "Comprar" na pagina
-# Então ele será redirecionado ao checkout ou o fluxo de comprar irá continuar
+# Então ele será redirecionado ao checkout ou o fluxo de compra irá continuar.
 
 def teste_botao_comprar():
     try:
